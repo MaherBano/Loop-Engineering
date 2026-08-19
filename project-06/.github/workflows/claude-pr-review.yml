@@ -1,0 +1,38 @@
+name: Claude PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Review PR with Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Review this pull request for bugs and code quality issues. Focus especially on:
+
+            1. **Off-by-one errors**: Check array indexing, loop bounds, string slicing, and range calculations
+            2. **Missing null/zero checks**: Look for unvalidated inputs, potential null pointer dereferences, division by zero, and missing boundary validations
+            3. **Logic errors**: Incorrect conditions, missing edge cases, and control flow issues
+            4. **Resource handling**: Unclosed resources, memory leaks, and missing error handling
+
+            For each issue found:
+            - Specify the file and line number
+            - Explain the bug and its potential impact
+            - Suggest a fix
+
+            Provide a clear, actionable review that helps improve code quality and prevent runtime errors.
