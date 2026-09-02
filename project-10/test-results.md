@@ -1,5 +1,15 @@
 # Test Results
 
+## Git Status Verification
+After running `git add .`:
+- ✅ `.gitignore` staged for commit
+- ✅ `README.md` staged for commit  
+- ✅ `check-token.md` staged for commit
+- ✅ `test-results.md` staged for commit
+- ❌ `.env` **NOT staged** - successfully ignored by git
+
+This proves `.env` will never be committed or pushed to GitHub.
+
 ## First Run: Using .env File
 
 **Local Execution:**
