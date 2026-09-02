@@ -1,0 +1,20 @@
+{
+  "routines": [
+    {
+      "name": "draft-changelog",
+      "prompt": "Read the git log for commits from the last 7 days using: git log --since='7 days ago' --pretty=format:'%h - %s (%an, %ar)' --no-merges. Create a draft changelog on a new branch called 'changelog-draft' with these changes formatted nicely in a CHANGELOG.md file. Include sections for Features, Fixes, and Other. At the end of your response, output the curl command needed to trigger the 'approve-changelog' routine.",
+      "schedule": null,
+      "triggers": []
+    },
+    {
+      "name": "approve-changelog",
+      "prompt": "Merge the 'changelog-draft' branch into main. First verify the branch exists and has a CHANGELOG.md file, then perform the merge with a commit message 'docs: merge approved changelog'. Push the changes to remote.",
+      "schedule": null,
+      "triggers": [
+        {
+          "type": "api"
+        }
+      ]
+    }
+  ]
+}

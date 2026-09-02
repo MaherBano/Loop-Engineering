@@ -1,0 +1,4 @@
+bearer-token.txt
+routine-state.json
+.claude/routine-state.json
+*.log

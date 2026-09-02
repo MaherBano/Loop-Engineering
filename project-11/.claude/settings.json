@@ -1,0 +1,22 @@
+{
+  "routines": {
+    "stateFile": ".claude/routine-state.json"
+  },
+  "permissions": {
+    "allowedTools": [
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git checkout*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git merge*)",
+      "Bash(git status*)",
+      "Bash(git fetch*)",
+      "Read",
+      "Write",
+      "Edit"
+    ],
+    "denyUnrestrictedPush": true
+  },
+  "connectors": {}
+}
