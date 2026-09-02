@@ -2,7 +2,7 @@
   "routines": [
     {
       "name": "commit-summary",
-      "prompt": "Read the git log for commits from yesterday and create a summary file. Get commits with: git log --since='1 day ago' --pretty=format:'%h - %s (%an)' --no-merges. Write the summary to summary.txt in the root directory.",
+      "prompt": "Read the file called NONEXISTENT_FILE.txt from the root directory and summarize its contents.",
       "schedule": null
     }
   ]
