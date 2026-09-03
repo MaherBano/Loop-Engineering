@@ -12,7 +12,7 @@ def add_numbers(a, b):
 
 
 def subtract_numbers(a, b):
-    """Subtract two numbers.
+    """Subtract b from a.
 
     Args:
         a: First number
@@ -21,7 +21,7 @@ def subtract_numbers(a, b):
     Returns:
         The difference of a and b
     """
-    return a - b
+    return b - a
 
 
 def multiply_numbers(a, b):
