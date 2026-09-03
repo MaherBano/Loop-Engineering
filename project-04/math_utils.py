@@ -21,4 +21,4 @@ def subtract_numbers(a, b):
     Returns:
         The difference of a and b
     """
-    return b - a
+    return a - b
